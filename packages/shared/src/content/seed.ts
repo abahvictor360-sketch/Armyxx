@@ -23,7 +23,7 @@ export const seedContent: SiteContent = {
       'To have a Nigerian Army that is adequately trained, equipped and motivated to fulfil its constitutional roles, with the professionalism and discipline that earn the confidence of all Nigerians.',
     hq: {
       address: 'Headquarters 81 Division (Amphibious), Nigerian Army, Eti-Osa, Lagos, Nigeria',
-      phones: ['+234 (0) 9 000 0000', '+234 (0) 9 000 0001'],
+      phones: ['+234 (0) 1 000 0000', '+234 (0) 1 000 0001'],
       email: 'info@army.mil.ng',
       mapEmbed:
         'https://www.openstreetmap.org/export/embed.html?bbox=3.4000%2C6.4200%2C3.4600%2C6.4600&layer=mapnik&marker=6.4400%2C3.4300',
@@ -143,9 +143,9 @@ export const seedContent: SiteContent = {
   events: [
     { slug: 'recruit-registration-window', title: 'Recruit Intake online registration', date: `${y}-09-28`, endDate: `${y}-11-08`, location: 'Online — recruitment portal', description: 'Online registration window for the Recruit Intake.', category: 'recruitment' },
     { slug: 'state-screening', title: 'State-level screening exercise', date: `${y}-11-24`, endDate: `${y}-12-05`, location: 'Designated screening centres nationwide', description: 'Physical and document screening for shortlisted applicants.', category: 'recruitment' },
-    { slug: 'armed-forces-remembrance', title: 'Armed Forces Remembrance Day', date: `${y + 1}-01-15`, location: 'National Arcade, Abuja', description: 'Wreath-laying ceremony in honour of fallen heroes.', category: 'ceremony' },
+    { slug: 'armed-forces-remembrance', title: 'Armed Forces Remembrance Day', date: `${y + 1}-01-15`, location: 'Tafawa Balewa Square, Lagos Island, Lagos', description: 'Wreath-laying ceremony in honour of fallen heroes.', category: 'ceremony' },
     { slug: 'nadcel', title: 'Nigerian Army Day Celebration (NADCEL)', date: `${y + 1}-07-01`, endDate: `${y + 1}-07-06`, location: 'Host formation (to be announced)', description: 'Annual celebration including sports, community projects and a grand finale parade.', category: 'ceremony' },
-    { slug: 'coas-games', title: 'COAS Inter-Division Games', date: `${y}-12-08`, endDate: `${y}-12-14`, location: 'Abuja', description: 'Inter-division sports competition.', category: 'sports' },
+    { slug: 'coas-games', title: 'COAS Inter-Division Games', date: `${y}-12-08`, endDate: `${y}-12-14`, location: 'Bonny Cantonment, Victoria Island, Lagos', description: 'Inter-division sports competition.', category: 'sports' },
   ],
 
   gallery: [

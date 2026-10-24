@@ -4,7 +4,7 @@ export const dynamic = 'force-static';
 export const metadata = { title: 'Privacy Notice', description: 'How the Nigerian Army processes personal data under the Nigeria Data Protection Act 2023.' };
 
 const SECTIONS: [string, string[]][] = [
-  ['Who we are', ['The Nigerian Army, Army Headquarters, Abuja, is the data controller for personal data processed through this website and the recruitment portal. Our Data Protection Officer can be contacted at dpo@army.mil.ng.']],
+  ['Who we are', ['The Nigerian Army, Headquarters 81 Division (Amphibious), Eti-Osa, Lagos, is the data controller for personal data processed through this website and the recruitment portal. Our Data Protection Officer can be contacted at dpo@army.mil.ng.']],
   ['What we collect', ['Recruitment portal: name, contact details, date of birth, NIN, state of origin and LGA, education, physical details, next of kin, and uploaded documents. Contact form: your name, email, optional phone number and message. Technical data: hashed IP addresses and security logs.']],
   ['Why and on what lawful basis', ['We process recruitment data to assess eligibility and run the recruitment exercise, based on your consent and on the performance of a task carried out in the public interest (NDPA 2023, s.25). Contact data is processed to respond to your enquiry.']],
   ['How we protect it', ['Data is encrypted in transit (TLS) and at rest. Sensitive fields are additionally encrypted at application level. Access is limited by role, protected by two-factor authentication, and every administrative access is recorded in a tamper-evident audit log. Uploaded documents are only accessible via short-lived signed links.']],
