@@ -11,6 +11,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ChevronDown, Menu, Phone, X, ShieldCheck, ArrowRight } from 'lucide-react';
 import { NAV } from '@/lib/nav';
 import { DEMO } from '@/lib/api';
+import { WhenRecruiting } from '@/lib/recruitment';
 
 export function Header() {
   const pathname = usePathname();
@@ -162,7 +163,9 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Link href="/portal" className="btn-gold hidden min-h-10 px-3 whitespace-nowrap min-[360px]:inline-flex sm:min-h-11 sm:px-5">Apply<span className="hidden sm:inline">&nbsp;Now</span></Link>
+            <WhenRecruiting>
+              <Link href="/portal" className="btn-gold hidden min-h-10 px-3 whitespace-nowrap min-[360px]:inline-flex sm:min-h-11 sm:px-5">Apply<span className="hidden sm:inline">&nbsp;Now</span></Link>
+            </WhenRecruiting>
             <button
               type="button"
               className="inline-flex h-11 w-11 items-center justify-center rounded-md hover:bg-white/10 xl:hidden"
@@ -210,7 +213,9 @@ export function Header() {
                 </li>
               ))}
             </ul>
-            <Link href="/portal" className="btn-gold mt-6 w-full">Apply Now — it&apos;s free</Link>
+            <WhenRecruiting>
+              <Link href="/portal" className="btn-gold mt-6 w-full">Apply Now — it&apos;s free</Link>
+            </WhenRecruiting>
           </nav>
         </div>
       </header>

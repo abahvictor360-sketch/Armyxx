@@ -44,7 +44,7 @@ export const NAV: NavItem[] = [
         links: [
           { label: 'Eligibility Requirements', href: '/join/eligibility', description: 'Check you qualify' },
           { label: 'How to Apply', href: '/join/how-to-apply', description: 'Seven simple steps' },
-          { label: 'Apply Online', href: '/portal', description: 'Start or continue your application' },
+          { label: 'Recruitment Portal', href: '/portal', description: 'Sign in, or apply when recruitment is open' },
         ],
       },
       {

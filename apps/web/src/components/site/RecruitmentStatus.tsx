@@ -4,19 +4,11 @@
  * CDN-cached /reference/exercise endpoint (30s TTL) — cheap even in a spike.
  */
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import { CalendarClock, ArrowRight } from 'lucide-react';
-import { api } from '@/lib/api';
-
-interface Ex { open: boolean; title?: string; closesAt?: string; opensAt?: string }
+import { useRecruitment } from '@/lib/recruitment';
 
 export function RecruitmentStatus({ variant = 'card' }: { variant?: 'card' | 'inline' }) {
-  const [ex, setEx] = useState<Ex | null>(null);
-  useEffect(() => {
-    api<Ex>('/reference/exercise', { maxRetries: 1 })
-      .then(setEx)
-      .catch(() => setEx({ open: false }));
-  }, []);
+  const ex = useRecruitment();
   const closes = ex?.closesAt ? new Date(ex.closesAt).toLocaleDateString('en-NG', { day: 'numeric', month: 'long', year: 'numeric' }) : null;
 
   if (variant === 'inline') {
@@ -44,7 +36,7 @@ export function RecruitmentStatus({ variant = 'card' }: { variant?: 'card' | 'in
         ) : (
           <>
             <p className="badge bg-khaki-100 text-olive-900">Closed</p>
-            <p className="mt-3 text-sm text-muted">No recruitment exercise is open. Watch this page and our official channels for announcements.</p>
+            <p className="mt-3 text-sm text-muted">No recruitment exercise is open right now. Recruitment usually opens twice a year — watch this website and our official channels for the next date.</p>
             <Link href="/join/eligibility" className="btn-outline mt-4 w-full">Check eligibility</Link>
           </>
         )}

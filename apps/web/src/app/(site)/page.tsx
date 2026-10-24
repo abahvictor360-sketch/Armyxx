@@ -4,6 +4,7 @@ import { ArrowRight, BellRing, Calendar, HeartHandshake, MapPin, Megaphone, News
 import { getContent, formatDate, NEWS_CATEGORY_LABELS } from '@/lib/content';
 import { RecruitmentStatus } from '@/components/site/RecruitmentStatus';
 import { SectionHeading } from '@/components/site/PageHero';
+import { WhenRecruiting } from '@/lib/recruitment';
 
 export const dynamic = 'force-static';
 
@@ -253,11 +254,13 @@ export default async function HomePage() {
           <div>
             <p className="text-xs font-semibold tracking-[0.2em] text-gold-300 uppercase">Serve Nigeria</p>
             <h2 className="mt-2 max-w-xl text-3xl font-bold text-white sm:text-4xl">Ready to serve?</h2>
-            <p className="mt-2 max-w-xl text-khaki-100">Check you qualify, get your documents ready and apply online in about 20 minutes. It costs nothing.</p>
+            <p className="mt-2 max-w-xl text-khaki-100">Recruitment usually opens twice a year. Check you qualify and get your documents ready now, so you can apply as soon as the portal opens. It costs nothing.</p>
           </div>
           <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
             <Link href="/join/eligibility" className="btn-ghost-light">Check eligibility</Link>
-            <Link href="/portal/register" className="btn-gold">Apply online <ArrowRight aria-hidden className="h-4 w-4" /></Link>
+            <WhenRecruiting fallback={<Link href="/join/how-to-apply" className="btn-gold">How to apply <ArrowRight aria-hidden className="h-4 w-4" /></Link>}>
+              <Link href="/portal/register" className="btn-gold">Apply online <ArrowRight aria-hidden className="h-4 w-4" /></Link>
+            </WhenRecruiting>
           </div>
         </div>
       </section>

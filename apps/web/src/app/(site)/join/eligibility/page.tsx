@@ -3,6 +3,7 @@ import { Check } from 'lucide-react';
 import { DEFAULT_RULES, ENTRY_TYPE_LABELS, ENTRY_TYPES, QUALIFICATION_LABELS } from '@armyx/shared';
 import { PageHero } from '@/components/site/PageHero';
 import { Alert } from '@/components/ui/Alert';
+import { WhenRecruiting } from '@/lib/recruitment';
 
 export const dynamic = 'force-static';
 export const metadata = { title: 'Eligibility Requirements', description: 'Who can apply to join the Nigerian Army: age, height, education and other requirements.' };
@@ -62,7 +63,9 @@ export default function EligibilityPage() {
           </div>
         </div>
         <div className="mt-12 flex flex-wrap gap-3">
-          <Link href="/portal/register" className="btn-primary">I qualify — start my application</Link>
+          <WhenRecruiting>
+            <Link href="/portal/register" className="btn-primary">I qualify — start my application</Link>
+          </WhenRecruiting>
           <Link href="/join/how-to-apply" className="btn-outline">How to apply</Link>
         </div>
       </section>
