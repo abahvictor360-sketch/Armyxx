@@ -18,6 +18,8 @@ export function Header() {
   const [mobile, setMobile] = useState(false);
   const [mobileSection, setMobileSection] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [drawerTop, setDrawerTop] = useState(0);
+  const headerRef = useRef<HTMLElement>(null);
   const navRef = useRef<HTMLElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
@@ -72,7 +74,7 @@ export function Header() {
         </div>
       </div>
 
-      <header className={`sticky top-0 z-50 border-b border-olive-800 bg-olive-800 text-white transition-shadow ${scrolled ? 'shadow-lg' : ''}`}>
+      <header ref={headerRef} className={`sticky top-0 z-50 border-b border-olive-800 bg-olive-800 text-white transition-shadow ${scrolled ? 'shadow-lg' : ''}`}>
         <div className="container-x flex h-18 items-center justify-between gap-4 py-2">
           <Link href="/" className="flex min-w-0 items-center gap-3" aria-label="Nigerian Army — home">
             <Image src="/images/crest.png" alt="" width={52} height={52} priority className="h-12 w-12 shrink-0 rounded-full ring-2 ring-gold-500/60" />
@@ -160,14 +162,18 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Link href="/portal" className="btn-gold hidden whitespace-nowrap sm:inline-flex">Apply Now</Link>
+            <Link href="/portal" className="btn-gold hidden min-h-10 px-3 whitespace-nowrap min-[360px]:inline-flex sm:min-h-11 sm:px-5">Apply<span className="hidden sm:inline">&nbsp;Now</span></Link>
             <button
               type="button"
               className="inline-flex h-11 w-11 items-center justify-center rounded-md hover:bg-white/10 xl:hidden"
               aria-expanded={mobile}
               aria-controls="mobile-nav"
               aria-label={mobile ? 'Close menu' : 'Open menu'}
-              onClick={() => setMobile(!mobile)}
+              onClick={() => {
+                // The utility bar scrolls away, so anchor the drawer to the header's current bottom edge.
+                setDrawerTop(headerRef.current?.getBoundingClientRect().bottom ?? 0);
+                setMobile(!mobile);
+              }}
             >
               {mobile ? <X aria-hidden /> : <Menu aria-hidden />}
             </button>
@@ -175,7 +181,7 @@ export function Header() {
         </div>
 
         {/* Mobile / tablet drawer */}
-        <div id="mobile-nav" hidden={!mobile} className="fixed inset-x-0 top-[calc(4.5rem+2.25rem)] bottom-0 overflow-y-auto bg-olive-900 xl:hidden">
+        <div id="mobile-nav" hidden={!mobile} style={{ top: drawerTop }} className="fixed inset-x-0 bottom-0 overflow-y-auto overscroll-contain bg-olive-900 xl:hidden">
           <nav aria-label="Mobile" className="container-x py-4">
             <ul className="divide-y divide-white/10">
               {NAV.map((item) => (

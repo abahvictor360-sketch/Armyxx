@@ -36,7 +36,7 @@ export async function Footer() {
           ))}
         </div>
         <div className="lg:col-span-3">
-          <p className="font-semibold text-white">Army Headquarters</p>
+          <p className="font-semibold text-white">81 Division Headquarters</p>
           <ul className="mt-3 space-y-3 text-sm">
             <li className="flex gap-2"><MapPin aria-hidden className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />{settings.hq.address}</li>
             <li className="flex gap-2"><Phone aria-hidden className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />{settings.hq.phones[0]}</li>

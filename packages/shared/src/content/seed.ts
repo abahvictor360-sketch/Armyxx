@@ -22,11 +22,11 @@ export const seedContent: SiteContent = {
     vision:
       'To have a Nigerian Army that is adequately trained, equipped and motivated to fulfil its constitutional roles, with the professionalism and discipline that earn the confidence of all Nigerians.',
     hq: {
-      address: 'Army Headquarters, Lagos, Nigeria',
+      address: 'Headquarters 81 Division (Amphibious), Nigerian Army, Eti-Osa, Lagos, Nigeria',
       phones: ['+234 (0) 9 000 0000', '+234 (0) 9 000 0001'],
       email: 'info@army.mil.ng',
       mapEmbed:
-        'https://www.openstreetmap.org/export/embed.html?bbox=3.3600%2C6.4400%2C3.4100%2C6.4700&layer=mapnik&marker=6.4550%2C3.3850',
+        'https://www.openstreetmap.org/export/embed.html?bbox=3.4000%2C6.4200%2C3.4600%2C6.4600&layer=mapnik&marker=6.4400%2C3.4300',
     },
     emergencyLines: [
       { label: 'Army Emergency Call Centre (toll-free)', number: '193' },
@@ -159,10 +159,10 @@ export const seedContent: SiteContent = {
 
   leadership: [
     {
-      name: 'Chief of Army Staff',
+      name: 'W Shaibu',
       rank: 'Lieutenant General',
       appointment: 'Chief of Army Staff',
-      photo: '/images/officers-walking.jpg',
+      photo: '/images/coas.jpg',
       bio: [
         'The Chief of Army Staff (COAS) is the professional head of the Nigerian Army, responsible to the Chief of Defence Staff and the Commander-in-Chief for the operational effectiveness, training, administration and welfare of the Army.',
         'Replace this placeholder with the official biography supplied by the Directorate of Army Public Relations, including commissioning course, command appointments, operational tours, academic qualifications and honours.',

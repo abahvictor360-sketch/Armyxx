@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, BellRing, Calendar, HeartHandshake, MapPin, Megaphone, Newspaper, PhoneCall, UserPlus } from 'lucide-react';
+import { ArrowRight, BellRing, Calendar, HeartHandshake, MapPin, Megaphone, Newspaper, PhoneCall, Quote, UserPlus } from 'lucide-react';
 import { getContent, formatDate, NEWS_CATEGORY_LABELS } from '@/lib/content';
 import { RecruitmentStatus } from '@/components/site/RecruitmentStatus';
 import { SectionHeading } from '@/components/site/PageHero';
@@ -19,6 +19,13 @@ export default async function HomePage() {
   const news = [...c.news].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
   const [lead, ...rest] = news;
   const today = new Date().toISOString().slice(0, 10);
+  const coas = c.leadership[0];
+  const facts = [
+    { value: '1863', label: 'Year established' },
+    { value: '₦0', label: 'Cost to apply — recruitment is free' },
+    { value: '193', label: 'Toll-free emergency line' },
+    { value: String(c.institutions.length), label: 'Training institutions' },
+  ];
   const events = c.events.filter((e) => (e.endDate ?? e.date) >= today).sort((a, b) => a.date.localeCompare(b.date)).slice(0, 4);
 
   return (
@@ -27,23 +34,23 @@ export default async function HomePage() {
       <section className="relative isolate overflow-hidden bg-olive-950 text-white">
         <Image src="/images/parade-line.jpg" alt="Soldiers of the Nigerian Army standing in formation at a guard of honour" fill priority sizes="100vw" className="-z-10 object-cover object-center opacity-60" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-olive-950 via-olive-950/80 to-olive-950/20" />
-        <div className="container-x grid gap-10 pt-16 pb-36 sm:pt-24 lg:grid-cols-12 lg:pb-44">
+        <div className="container-x grid gap-8 pt-12 pb-32 sm:gap-10 sm:pt-24 sm:pb-36 lg:grid-cols-12 lg:pb-44">
           <div className="lg:col-span-7">
             <p className="inline-flex items-center gap-2 rounded-full border border-gold-500/60 bg-olive-950/60 px-3 py-1 text-xs font-semibold tracking-[0.18em] text-gold-300 uppercase">
               Nigerian Army · Est. 1863
             </p>
-            <h1 className="mt-6 font-serif text-4xl leading-tight font-bold text-white sm:text-6xl">{c.settings.heroTitle}</h1>
-            <p className="mt-5 max-w-xl text-lg text-khaki-100">{c.settings.heroSubtitle}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/join" className="btn-gold">Join the Army <ArrowRight aria-hidden className="h-4 w-4" /></Link>
+            <h1 className="mt-5 font-serif text-[2.1rem] leading-[1.1] font-bold text-balance text-white sm:mt-6 sm:text-6xl">{c.settings.heroTitle}</h1>
+            <p className="mt-4 max-w-xl text-base text-khaki-100 sm:mt-5 sm:text-lg">{c.settings.heroSubtitle}</p>
+            <div className="mt-7 grid grid-cols-2 gap-3 sm:mt-8 sm:flex sm:flex-wrap">
+              <Link href="/join" className="btn-gold col-span-2">Join the Army <ArrowRight aria-hidden className="h-4 w-4" /></Link>
               <Link href="/news" className="btn-ghost-light">Latest News</Link>
               <Link href="/contact" className="btn-ghost-light">Contact Us</Link>
             </div>
           </div>
           <div className="self-end lg:col-span-5">
-            <figure className="rounded-xl border border-white/15 bg-olive-950/70 p-6 backdrop-blur">
+            <figure className="rounded-xl border border-white/15 bg-olive-950/70 p-5 backdrop-blur sm:p-6">
               <p className="text-xs font-semibold tracking-[0.2em] text-gold-300 uppercase">Our mission</p>
-              <blockquote className="mt-3 font-serif text-lg leading-relaxed text-white">“{c.settings.mission}”</blockquote>
+              <blockquote className="mt-3 font-serif text-base leading-relaxed text-white sm:text-lg">“{c.settings.mission}”</blockquote>
               <figcaption className="mt-4 border-t border-white/10 pt-3"><RecruitmentStatus variant="inline" /></figcaption>
             </figure>
           </div>
@@ -52,15 +59,15 @@ export default async function HomePage() {
 
       {/* ------------------------------------------------ quick links (overlap hero) */}
       <section aria-label="Quick links" className="relative z-10 -mt-24 lg:-mt-28">
-        <div className="container-x grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="container-x grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
           {QUICK.map(({ title, text, href, Icon }) => (
-            <Link key={href} href={href} className="card group flex flex-col p-6 transition hover:-translate-y-1 hover:border-gold-500">
-              <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-olive-50 text-olive-700 group-hover:bg-olive-700 group-hover:text-gold-300">
+            <Link key={href} href={href} className="card group flex flex-col p-4 transition hover:-translate-y-1 hover:border-gold-500 sm:p-6">
+              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-olive-50 sm:h-12 sm:w-12 text-olive-700 group-hover:bg-olive-700 group-hover:text-gold-300">
                 <Icon aria-hidden className="h-6 w-6" />
               </span>
-              <span className="mt-4 font-serif text-xl font-semibold text-olive-900">{title}</span>
-              <span className="mt-1 flex-1 text-sm text-muted">{text}</span>
-              <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-olive-700">Explore <ArrowRight aria-hidden className="h-4 w-4 transition group-hover:translate-x-1" /></span>
+              <span className="mt-3 font-serif text-base leading-snug font-semibold text-olive-900 sm:mt-4 sm:text-xl">{title}</span>
+              <span className="mt-1 hidden flex-1 text-sm text-muted sm:block">{text}</span>
+              <span className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-olive-700 sm:mt-4">Explore <ArrowRight aria-hidden className="h-4 w-4 transition group-hover:translate-x-1" /></span>
             </Link>
           ))}
         </div>
@@ -78,8 +85,20 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* ------------------------------------------------ key facts */}
+      <section aria-label="Key facts" className="container-x pt-12">
+        <dl className="grid grid-cols-2 overflow-hidden rounded-xl border border-olive-100 bg-olive-100 [gap:1px] md:grid-cols-4">
+          {facts.map((f) => (
+            <div key={f.label} className="flex flex-col-reverse bg-white p-4 sm:p-6">
+              <dt className="mt-1 text-xs leading-snug text-muted sm:text-sm">{f.label}</dt>
+              <dd className="font-serif text-3xl font-bold text-olive-800 sm:text-4xl">{f.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
       {/* ------------------------------------------------ announcements + recruitment */}
-      <section className="container-x grid gap-10 py-16 lg:grid-cols-12">
+      <section className="container-x grid gap-10 py-12 sm:py-16 lg:grid-cols-12">
         <div className="lg:col-span-8">
           <SectionHeading eyebrow="Notices" title="Latest announcements" />
           <ul className="mt-8 space-y-4">
@@ -109,34 +128,34 @@ export default async function HomePage() {
       </section>
 
       {/* ------------------------------------------------ news */}
-      <section className="bg-olive-50/60 py-16">
+      <section className="bg-olive-50/60 py-12 sm:py-16">
         <div className="container-x">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <SectionHeading eyebrow="Operations & News" title="From the newsroom" />
             <Link href="/news" className="btn-outline">All press releases <ArrowRight aria-hidden className="h-4 w-4" /></Link>
           </div>
           {lead && (
-            <div className="mt-10 grid gap-6 lg:grid-cols-12">
+            <div className="mt-8 grid gap-6 sm:mt-10 lg:grid-cols-12">
               <Link href={`/news/${lead.slug}`} className="card group overflow-hidden lg:col-span-7">
                 <div className="relative aspect-[16/9]">
                   <Image src={lead.image} alt="" fill sizes="(min-width:1024px) 60vw, 100vw" className="object-cover transition group-hover:scale-[1.02]" />
                 </div>
-                <div className="p-6">
+                <div className="p-5 sm:p-6">
                   <p className="text-xs font-semibold tracking-wide text-olive-600 uppercase">{NEWS_CATEGORY_LABELS[lead.category]} · <time dateTime={lead.publishedAt}>{formatDate(lead.publishedAt)}</time></p>
-                  <h3 className="mt-2 text-2xl font-semibold group-hover:underline">{lead.title}</h3>
+                  <h3 className="mt-2 text-xl font-semibold group-hover:underline sm:text-2xl">{lead.title}</h3>
                   <p className="mt-2 text-muted">{lead.excerpt}</p>
                 </div>
               </Link>
-              <ul className="grid gap-4 lg:col-span-5">
+              <ul className="grid content-start gap-3 sm:gap-4 md:grid-cols-2 lg:col-span-5 lg:grid-cols-1">
                 {rest.slice(0, 4).map((n) => (
                   <li key={n.slug}>
                     <Link href={`/news/${n.slug}`} className="card group flex gap-4 overflow-hidden p-3">
-                      <span className="relative h-24 w-32 shrink-0 overflow-hidden rounded-md">
+                      <span className="relative h-20 w-24 shrink-0 overflow-hidden rounded-md sm:h-24 sm:w-32">
                         <Image src={n.image} alt="" fill sizes="128px" className="object-cover" />
                       </span>
                       <span className="min-w-0">
                         <span className="block text-xs text-muted"><time dateTime={n.publishedAt}>{formatDate(n.publishedAt)}</time></span>
-                        <span className="mt-1 line-clamp-3 block font-semibold text-olive-900 group-hover:underline">{n.title}</span>
+                        <span className="mt-1 line-clamp-3 block text-sm font-semibold text-olive-900 group-hover:underline sm:text-base">{n.title}</span>
                       </span>
                     </Link>
                   </li>
@@ -147,13 +166,32 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* ------------------------------------------------ leadership */}
+      {coas && (
+        <section aria-labelledby="leadership-heading" className="container-x pt-12 sm:pt-16">
+          <div className="grid overflow-hidden rounded-2xl bg-olive-900 text-white md:grid-cols-12">
+            <div className="relative aspect-[4/3] bg-white md:col-span-5 md:aspect-auto md:min-h-80">
+              <Image src={coas.photo} alt={`${coas.rank} ${coas.name}, ${coas.appointment}`} fill sizes="(min-width:768px) 40vw, 100vw" className="object-cover object-top" />
+            </div>
+            <div className="flex flex-col justify-center p-6 sm:p-10 md:col-span-7">
+              <p className="text-xs font-semibold tracking-[0.2em] text-gold-300 uppercase">Leadership</p>
+              <h2 id="leadership-heading" className="mt-2 text-2xl font-bold text-white sm:text-3xl">{coas.rank} {coas.name}</h2>
+              <p className="mt-1 text-sm text-khaki-100">{coas.appointment}</p>
+              <Quote aria-hidden className="mt-6 h-7 w-7 text-gold-500" />
+              <p className="mt-2 leading-relaxed text-khaki-100">{coas.bio[0]}</p>
+              <Link href="/about/leadership" className="btn-ghost-light mt-6 self-start">Read profile <ArrowRight aria-hidden className="h-4 w-4" /></Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ------------------------------------------------ values + events */}
-      <section className="container-x grid gap-12 py-16 lg:grid-cols-2">
-        <div>
+      <section className="container-x grid gap-12 py-12 sm:py-16 lg:grid-cols-2">
+        <div className="min-w-0">
           <SectionHeading eyebrow="Who we are" title="Core values" intro={c.settings.vision} />
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+          <ul className="-mx-4 mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 [scrollbar-width:none] sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:px-0 sm:pb-0">
             {c.settings.coreValues.map((v, i) => (
-              <li key={v.title} className="rounded-lg border border-olive-100 p-4">
+              <li key={v.title} className="w-[75%] shrink-0 snap-start rounded-lg border border-olive-100 bg-white p-4 sm:w-auto">
                 <p className="font-serif text-2xl font-bold text-gold-600" aria-hidden>{String(i + 1).padStart(2, '0')}</p>
                 <p className="mt-1 font-semibold text-olive-900">{v.title}</p>
                 <p className="mt-1 text-sm text-muted">{v.text}</p>
@@ -162,7 +200,7 @@ export default async function HomePage() {
           </ul>
         </div>
         <div>
-          <div className="flex items-end justify-between gap-4">
+          <div className="flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
             <SectionHeading eyebrow="Calendar" title="Upcoming events" />
             <Link href="/news/events" className="text-sm font-semibold text-olive-700 hover:underline">Full calendar</Link>
           </div>
@@ -190,13 +228,13 @@ export default async function HomePage() {
       {/* ------------------------------------------------ CTA */}
       <section className="relative isolate overflow-hidden bg-olive-800">
         <Image src="/images/recruits-helmets.jpg" alt="" fill sizes="100vw" className="-z-10 object-cover opacity-25" />
-        <div className="container-x flex flex-col items-start gap-6 py-16 text-white md:flex-row md:items-center md:justify-between">
+        <div className="container-x flex flex-col items-stretch gap-6 py-12 text-white sm:items-start sm:py-16 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="text-xs font-semibold tracking-[0.2em] text-gold-300 uppercase">Serve your nation</p>
             <h2 className="mt-2 max-w-xl text-3xl font-bold text-white sm:text-4xl">Ready to answer the call?</h2>
             <p className="mt-2 max-w-xl text-khaki-100">Check the eligibility requirements, prepare your documents and apply online. It is free.</p>
           </div>
-          <div className="flex flex-wrap gap-3">
+          <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
             <Link href="/join/eligibility" className="btn-ghost-light">Eligibility</Link>
             <Link href="/portal/register" className="btn-gold">Apply online <ArrowRight aria-hidden className="h-4 w-4" /></Link>
           </div>

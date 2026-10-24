@@ -14,7 +14,7 @@ export default async function LeadershipPage() {
       <section className="container-x grid gap-10 py-16 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <div className="card overflow-hidden">
-            <div className="relative aspect-[4/5]"><Image src={coas.photo} alt={`${coas.rank} ${coas.name}`} fill sizes="(min-width:1024px) 33vw, 100vw" className="object-cover" /></div>
+            <div className="relative aspect-[4/5]"><Image src={coas.photo} alt={`${coas.rank} ${coas.name}`} fill sizes="(min-width:1024px) 33vw, 100vw" className="object-cover object-top" /></div>
             <div className="border-t-4 border-gold-500 bg-olive-800 p-5 text-white">
               <p className="text-xs tracking-[0.2em] text-gold-300 uppercase">{coas.rank}</p>
               <p className="mt-1 font-serif text-2xl font-bold">{coas.name}</p>

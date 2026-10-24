@@ -9,7 +9,7 @@ export function PageHero({
     <section className="relative isolate overflow-hidden bg-olive-900 text-white">
       <Image src={image} alt="" fill priority sizes="100vw" className="-z-10 object-cover opacity-35" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-olive-950 via-olive-900/85 to-olive-900/30" />
-      <div className="container-x py-14 sm:py-20">
+      <div className="container-x py-10 sm:py-20">
         <nav aria-label="Breadcrumb">
           <ol className="flex flex-wrap items-center gap-1 text-sm text-khaki-100">
             <li><Link href="/" className="hover:underline">Home</Link></li>
@@ -22,7 +22,7 @@ export function PageHero({
           </ol>
         </nav>
         {eyebrow && <p className="mt-6 text-xs font-semibold tracking-[0.2em] text-gold-300 uppercase">{eyebrow}</p>}
-        <h1 className="mt-3 max-w-3xl font-serif text-3xl font-bold text-white sm:text-5xl">{title}</h1>
+        <h1 className="mt-3 max-w-3xl font-serif text-3xl font-bold text-balance text-white sm:text-5xl">{title}</h1>
         {intro && <p className="mt-4 max-w-2xl text-base text-khaki-100 sm:text-lg">{intro}</p>}
       </div>
       <div className="h-1 bg-gold-500" />
