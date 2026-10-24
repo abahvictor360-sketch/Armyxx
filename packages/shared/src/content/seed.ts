@@ -22,11 +22,11 @@ export const seedContent: SiteContent = {
     vision:
       'To have a Nigerian Army that is adequately trained, equipped and motivated to fulfil its constitutional roles, with the professionalism and discipline that earn the confidence of all Nigerians.',
     hq: {
-      address: 'Army Headquarters, Mogadishu Cantonment, Asokoro, Abuja, FCT, Nigeria',
+      address: 'Army Headquarters, Lagos, Nigeria',
       phones: ['+234 (0) 9 000 0000', '+234 (0) 9 000 0001'],
       email: 'info@army.mil.ng',
       mapEmbed:
-        'https://www.openstreetmap.org/export/embed.html?bbox=7.5100%2C9.0200%2C7.5500%2C9.0500&layer=mapnik&marker=9.0350%2C7.5300',
+        'https://www.openstreetmap.org/export/embed.html?bbox=3.3600%2C6.4400%2C3.4100%2C6.4700&layer=mapnik&marker=6.4550%2C3.3850',
     },
     emergencyLines: [
       { label: 'Army Emergency Call Centre (toll-free)', number: '193' },
