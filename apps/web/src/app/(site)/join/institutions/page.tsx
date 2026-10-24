@@ -9,7 +9,7 @@ export default async function InstitutionsPage() {
   const { institutions } = await getContent();
   return (
     <>
-      <PageHero title="Training institutions" intro="Where Nigerian Army officers and soldiers are trained." eyebrow="Join the Army" crumbs={[{ label: 'Join the Army', href: '/join' }, { label: 'Training Institutions' }]} image="/images/recruits-helmets.jpg" />
+      <PageHero title="Training institutions" intro="Where Nigerian Army soldiers and officers train — from the Depot in Zaria to the School of Signals in Lagos." eyebrow="Join the Army" crumbs={[{ label: 'Join the Army', href: '/join' }, { label: 'Training Institutions' }]} image="/images/recruits-helmets.jpg" />
       <section className="container-x py-16"><InstitutionDirectory items={institutions} /></section>
     </>
   );

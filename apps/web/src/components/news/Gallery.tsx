@@ -32,7 +32,7 @@ export function Gallery({ items }: { items: GalleryItem[] }) {
         {shown.map((m, i) => (
           <li key={m.id} className="mb-4 break-inside-avoid">
             <button type="button" onClick={() => setIndex(i)} className="group relative block w-full overflow-hidden rounded-xl text-left">
-              <Image src={m.src} alt={m.title} width={800} height={560} className="h-auto w-full object-cover transition group-hover:scale-[1.03]" sizes="(min-width:1024px) 33vw, 100vw" />
+              <Image src={m.src} alt="" width={800} height={560} className="h-auto w-full object-cover transition group-hover:scale-[1.03]" sizes="(min-width:1024px) 33vw, 100vw" />
               <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-olive-950/90 to-transparent p-4 text-sm font-semibold text-white">{m.title}</span>
               {m.type === 'video' && <span className="absolute top-3 right-3 flex h-10 w-10 items-center justify-center rounded-full bg-gold-500 text-olive-950"><Play aria-hidden className="h-5 w-5" /><span className="sr-only">Video</span></span>}
             </button>

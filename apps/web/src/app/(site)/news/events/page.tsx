@@ -3,13 +3,13 @@ import { PageHero } from '@/components/site/PageHero';
 import { EventsCalendar } from '@/components/news/EventsCalendar';
 
 export const dynamic = 'force-static';
-export const metadata = { title: 'Events Calendar', description: 'Upcoming Nigerian Army ceremonies, recruitment activities and events.' };
+export const metadata = { title: 'Events Calendar', description: 'Upcoming ceremonies, recruitment dates and events of the Nigerian Army in Lagos.' };
 
 export default async function EventsPage() {
   const { events } = await getContent();
   return (
     <>
-      <PageHero title="Events calendar" intro="Ceremonies, recruitment milestones, sports and community activities." eyebrow="Operations & News" crumbs={[{ label: 'News', href: '/news' }, { label: 'Events' }]} />
+      <PageHero title="Events calendar" intro="Ceremonies, recruitment dates, sports and community events in Lagos." eyebrow="Operations & News" crumbs={[{ label: 'News', href: '/news' }, { label: 'Events' }]} />
       <section className="container-x py-16"><EventsCalendar events={events} /></section>
     </>
   );

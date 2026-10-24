@@ -20,7 +20,7 @@ export function NewsList({ items, labels }: { items: NewsItem[]; labels: Record<
 
   return (
     <div className="grid gap-10 lg:grid-cols-12">
-      <aside className="lg:col-span-3">
+      <div className="lg:col-span-3">
         <div className="space-y-5 lg:sticky lg:top-28">
           <label className="relative block">
             <span className="field-label">Search</span>
@@ -47,7 +47,7 @@ export function NewsList({ items, labels }: { items: NewsItem[]; labels: Record<
             </select>
           </label>
         </div>
-      </aside>
+      </div>
       <div className="lg:col-span-9">
         <p className="text-sm text-muted" aria-live="polite">{results.length} item{results.length === 1 ? '' : 's'}</p>
         <ul className="mt-4 grid gap-6 sm:grid-cols-2">

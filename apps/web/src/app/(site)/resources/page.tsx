@@ -10,7 +10,7 @@ export default async function ResourcesPage() {
   const { downloads } = await getContent();
   return (
     <>
-      <PageHero title="Downloads library" intro="Official forms, publications and reports." eyebrow="Resources" crumbs={[{ label: 'Resources' }]} />
+      <PageHero title="Downloads library" intro="Official forms, reports and publications to download." eyebrow="Resources" crumbs={[{ label: 'Resources' }]} />
       <section className="container-x grid gap-10 py-16 lg:grid-cols-12">
         <div className="lg:col-span-9"><DocTable items={downloads} categories={{ forms: 'Forms', publications: 'Publications', reports: 'Reports' }} /></div>
         <nav aria-label="Resources" className="lg:col-span-3">

@@ -20,7 +20,7 @@ export async function Footer() {
           </div>
           <p className="mt-5 max-w-sm text-sm leading-6 text-khaki-100/90">{settings.mission}</p>
           <p className="mt-5 rounded-md border border-gold-500/40 bg-gold-500/10 p-3 text-sm text-gold-300">
-            Recruitment is <strong>free of charge</strong>. Report anyone who asks you for money.
+            Applying to join the Army is <strong>free</strong>. If anyone asks you for money, report them.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-5">
@@ -51,7 +51,7 @@ export async function Footer() {
       </div>
       <div className="border-t border-white/10">
         <div className="container-x flex flex-col gap-3 py-5 text-xs text-khaki-100/80 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Nigerian Army. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Nigerian Army, 81 Division (Amphibious), Lagos. All rights reserved.</p>
           <ul className="flex flex-wrap gap-4">
             <li><Link href="/privacy" className="hover:text-white">Privacy notice (NDPA 2023)</Link></li>
             <li><Link href="/accessibility" className="hover:text-white">Accessibility</Link></li>

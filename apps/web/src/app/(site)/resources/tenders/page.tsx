@@ -10,7 +10,7 @@ export default async function TendersPage() {
   const { tenders } = await getContent();
   return (
     <>
-      <PageHero title="Tenders & procurement" intro="Open invitations to tender, deadlines and award status, in line with the Public Procurement Act." eyebrow="Resources" crumbs={[{ label: 'Resources', href: '/resources' }, { label: 'Tenders' }]} />
+      <PageHero title="Tenders & procurement" intro="Open invitations to tender in Lagos, with deadlines and results, in line with the Public Procurement Act 2007." eyebrow="Resources" crumbs={[{ label: 'Resources', href: '/resources' }, { label: 'Tenders' }]} />
       <section className="container-x py-16">
         <Alert tone="info">Bidders must be registered on the Bureau of Public Procurement (BPP) National Database. The Army never requests payment to a personal account.</Alert>
         <div className="mt-8"><TenderList tenders={tenders} /></div>

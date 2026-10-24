@@ -10,7 +10,7 @@ export default async function LeadershipPage() {
   const coas = leadership[0]!;
   return (
     <>
-      <PageHero title="Chief of Army Staff" intro="The professional head of the Nigerian Army." eyebrow="Leadership" crumbs={[{ label: 'About Us', href: '/about' }, { label: 'Chief of Army Staff' }]} />
+      <PageHero title="Chief of Army Staff" intro="The Chief of Army Staff leads the Nigerian Army, including the troops of 81 Division in Lagos." eyebrow="Leadership" crumbs={[{ label: 'About Us', href: '/about' }, { label: 'Chief of Army Staff' }]} />
       <section className="container-x grid gap-10 py-16 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <div className="card overflow-hidden">

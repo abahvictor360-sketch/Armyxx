@@ -47,7 +47,7 @@ export function EventsCalendar({ events }: { events: EventItem[] }) {
             return (
               <button key={k} type="button" disabled={!ev.length} onClick={() => setSelected(selected === k ? null : k)} aria-pressed={selected === k}
                 aria-label={`${d.toLocaleDateString('en-NG', { day: 'numeric', month: 'long', timeZone: 'UTC' })}${ev.length ? `, ${ev.length} event(s)` : ''}`}
-                className={`flex aspect-square flex-col items-center justify-start rounded-md p-1 text-sm ${inMonth ? '' : 'opacity-35'} ${selected === k ? 'ring-2 ring-gold-500' : ''} ${ev.length ? 'bg-olive-50 font-semibold hover:bg-olive-100' : ''} ${k === iso(new Date()) ? 'border border-olive-700' : ''}`}>
+                className={`flex aspect-square flex-col items-center justify-start rounded-md p-1 text-sm ${inMonth ? '' : 'text-muted'} ${selected === k ? 'ring-2 ring-gold-500' : ''} ${ev.length ? 'bg-olive-50 font-semibold hover:bg-olive-100' : ''} ${k === iso(new Date()) ? 'border border-olive-700' : ''}`}>
                 {d.getUTCDate()}
                 <span className="mt-auto flex gap-0.5">{ev.slice(0, 3).map((e) => <span key={e.slug} className={`h-1.5 w-1.5 rounded-full ${CAT_COLOURS[e.category].split(' ')[0]}`} />)}</span>
               </button>

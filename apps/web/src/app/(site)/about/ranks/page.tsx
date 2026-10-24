@@ -13,7 +13,7 @@ export default async function RanksPage() {
   ];
   return (
     <>
-      <PageHero title="Ranks & insignia" intro="Rank structure of the Nigerian Army, from Private to General." eyebrow="Structure" crumbs={[{ label: 'About Us', href: '/about' }, { label: 'Ranks & Insignia' }]} image="/images/recruits-helmets.jpg" />
+      <PageHero title="Ranks & insignia" intro="How to recognise the rank of an officer or soldier, from Private to General." eyebrow="Structure" crumbs={[{ label: 'About Us', href: '/about' }, { label: 'Ranks & Insignia' }]} image="/images/recruits-helmets.jpg" />
       {groups.map((g) => (
         <section key={g.title} className="container-x py-12">
           <SectionHeading title={g.title} />

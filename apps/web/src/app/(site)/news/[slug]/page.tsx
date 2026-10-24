@@ -37,14 +37,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
           <Link href="/news" className="btn-outline mt-6"><ArrowLeft aria-hidden className="h-4 w-4" /> All press releases</Link>
         </div>
-        <aside className="lg:col-span-4">
+        <div className="lg:col-span-4">
           <h2 className="text-xl font-bold">More news</h2>
           <ul className="mt-4 space-y-4">
             {related.map((r) => (
               <li key={r.slug}><Link href={`/news/${r.slug}`} className="card block p-4 hover:border-gold-500"><span className="text-xs text-muted">{formatDate(r.publishedAt)}</span><span className="mt-1 block font-semibold text-olive-900">{r.title}</span></Link></li>
             ))}
           </ul>
-        </aside>
+        </div>
       </article>
     </>
   );

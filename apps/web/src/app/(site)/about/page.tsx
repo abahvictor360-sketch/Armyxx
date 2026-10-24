@@ -5,20 +5,20 @@ import { getContent } from '@/lib/content';
 import { PageHero, SectionHeading } from '@/components/site/PageHero';
 
 export const dynamic = 'force-static';
-export const metadata = { title: 'About Us', description: 'History, vision, mission and core values of the Nigerian Army.' };
+export const metadata = { title: 'About Us', description: 'Who we are: the Nigerian Army in Lagos, 81 Division (Amphibious) — our mission, vision, values and history.' };
 
 const LINKS = [
-  { title: 'Our history', text: 'From Glover’s Hausa Force in 1863 to today.', href: '/about/history', image: '/images/parade-line.jpg' },
-  { title: 'Chief of Army Staff', text: 'The professional head of the Nigerian Army.', href: '/about/leadership', image: '/images/officers-walking.jpg' },
-  { title: 'Organisation', text: 'Interactive chart of the command structure.', href: '/about/organisation', image: '/images/armoured-vehicle.jpg' },
-  { title: 'Ranks & insignia', text: 'Commissioned and non-commissioned ranks.', href: '/about/ranks', image: '/images/recruits-helmets.jpg' },
+  { title: 'Our history', text: 'The Nigerian Army began in Lagos in 1863. This is our story.', href: '/about/history', image: '/images/parade-line.jpg' },
+  { title: 'Chief of Army Staff', text: 'Meet the head of the Nigerian Army.', href: '/about/leadership', image: '/images/officers-walking.jpg' },
+  { title: 'Organisation', text: 'How the Army and 81 Division are organised.', href: '/about/organisation', image: '/images/armoured-vehicle.jpg' },
+  { title: 'Ranks & insignia', text: 'Learn to read the ranks, from Private to General.', href: '/about/ranks', image: '/images/recruits-helmets.jpg' },
 ];
 
 export default async function AboutPage() {
   const { settings } = await getContent();
   return (
     <>
-      <PageHero title="About the Nigerian Army" intro="A professional force dedicated to defending Nigeria and supporting civil authority." eyebrow="About us" crumbs={[{ label: 'About Us' }]} image="/images/officers-walking.jpg" />
+      <PageHero title="The Nigerian Army in Lagos" intro="81 Division (Amphibious) protects Lagos and Ogun States, supports civil authority and stands ready to defend Nigeria." eyebrow="About us" crumbs={[{ label: 'About Us' }]} image="/images/officers-walking.jpg" />
       <section id="mission" className="container-x grid scroll-mt-28 gap-6 py-16 md:grid-cols-2">
         <div className="card p-8">
           <Target aria-hidden className="h-8 w-8 text-gold-600" />
@@ -34,7 +34,7 @@ export default async function AboutPage() {
       <section className="bg-olive-900 py-16 text-white">
         <div className="container-x">
           <p className="text-xs font-semibold tracking-[0.2em] text-gold-300 uppercase">Core values</p>
-          <h2 className="mt-2 text-3xl font-bold text-white">What every soldier stands for</h2>
+          <h2 className="mt-2 text-3xl font-bold text-white">What every soldier in Lagos stands for</h2>
           <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {settings.coreValues.map((v) => (
               <li key={v.title} className="border-t-2 border-gold-500 pt-4">
@@ -46,7 +46,7 @@ export default async function AboutPage() {
         </div>
       </section>
       <section className="container-x py-16">
-        <SectionHeading eyebrow="Explore" title="Learn more about us" />
+        <SectionHeading eyebrow="Explore" title="Find out more" />
         <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {LINKS.map((l) => (
             <li key={l.href}>

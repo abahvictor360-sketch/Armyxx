@@ -8,20 +8,20 @@ export const dynamic = 'force-static';
 export const metadata = { title: 'Eligibility Requirements', description: 'Who can apply to join the Nigerian Army: age, height, education and other requirements.' };
 
 const GENERAL = [
-  'Be a Nigerian citizen by birth with a valid National Identification Number (NIN).',
+  'Be a Nigerian citizen by birth, with a valid National Identification Number (NIN).',
   'Be medically, physically and mentally fit.',
-  'Not have been convicted of any criminal offence.',
-  'Possess a certificate of state of origin and a birth certificate or age declaration.',
+  'Have no criminal conviction.',
+  'Have a certificate of state of origin and a birth certificate or age declaration.',
   'Not be a member of any secret society or cult.',
 ];
 
 export default function EligibilityPage() {
   return (
     <>
-      <PageHero title="Eligibility requirements" intro="Make sure you qualify before you apply. The portal checks these rules automatically." eyebrow="Join the Army" crumbs={[{ label: 'Join the Army', href: '/join' }, { label: 'Eligibility' }]} />
+      <PageHero title="Eligibility requirements" intro="Check you qualify before you apply. The portal also checks these rules for you." eyebrow="Join the Army" crumbs={[{ label: 'Join the Army', href: '/join' }, { label: 'Eligibility' }]} />
       <section className="container-x py-16">
-        <Alert tone="info" title="Requirements may change per exercise">
-          The figures below are the standard requirements. The exact rules for each recruitment exercise are set by the Army and shown in the portal, which blocks applications that do not meet them.
+        <Alert tone="info" title="Requirements can change for each exercise">
+          These are the standard requirements. The exact rules for each recruitment exercise are shown in the portal, and the portal will not accept an application that does not meet them.
         </Alert>
         <div className="mt-10 grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
@@ -32,7 +32,7 @@ export default function EligibilityPage() {
               ))}
             </ul>
           </div>
-          <div className="overflow-x-auto lg:col-span-7">
+          <div tabIndex={0} role="region" aria-label="Requirements by entry type (scrolls sideways on small screens)" className="overflow-x-auto lg:col-span-7">
             <h2 className="text-2xl font-bold">By entry type</h2>
             <table className="mt-5 w-full min-w-[560px] border-collapse text-left text-sm">
               <caption className="sr-only">Eligibility requirements by entry type</caption>
@@ -58,11 +58,11 @@ export default function EligibilityPage() {
                 ))}
               </tbody>
             </table>
-            <p className="mt-2 text-xs text-muted">Age is calculated as at the closing date of the exercise.</p>
+            <p className="mt-2 text-xs text-muted">Your age is worked out on the closing date of the exercise.</p>
           </div>
         </div>
         <div className="mt-12 flex flex-wrap gap-3">
-          <Link href="/portal/register" className="btn-primary">I meet the requirements — apply</Link>
+          <Link href="/portal/register" className="btn-primary">I qualify — start my application</Link>
           <Link href="/join/how-to-apply" className="btn-outline">How to apply</Link>
         </div>
       </section>

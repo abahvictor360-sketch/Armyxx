@@ -6,9 +6,9 @@ const site = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
 
 export const metadata: Metadata = {
   metadataBase: new URL(site),
-  title: { default: 'Nigerian Army — Official Website', template: '%s | Nigerian Army' },
-  description: 'Official website of the Nigerian Army: news, operations, welfare, resources and the online recruitment portal. Recruitment is free.',
-  openGraph: { type: 'website', siteName: 'Nigerian Army', images: ['/images/parade-line.jpg'] },
+  title: { default: 'Nigerian Army, Lagos — 81 Division (Amphibious)', template: '%s | Nigerian Army, Lagos' },
+  description: 'The Nigerian Army in Lagos: news, operations, welfare and services from 81 Division (Amphibious), and the online recruitment portal. Applying is free.',
+  openGraph: { type: 'website', siteName: 'Nigerian Army, Lagos', images: ['/images/parade-line.jpg'] },
   twitter: { card: 'summary_large_image' },
   // Demo/preview builds must never be indexed by search engines.
   ...(process.env.NEXT_PUBLIC_DEMO_MODE === 'true' ? { robots: { index: false, follow: false } } : {}),

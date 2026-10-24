@@ -9,7 +9,7 @@ export default async function FaqPage() {
   const { faqs } = await getContent();
   return (
     <>
-      <PageHero title="Frequently asked questions" intro="Search our answers about eligibility, the application process, documents and screening." eyebrow="Join the Army" crumbs={[{ label: 'Join the Army', href: '/join' }, { label: 'FAQs' }]} />
+      <PageHero title="Frequently asked questions" intro="Quick answers about who can apply, how to apply, documents and screening. Type a word to search." eyebrow="Join the Army" crumbs={[{ label: 'Join the Army', href: '/join' }, { label: 'FAQs' }]} />
       <section className="container-x max-w-4xl py-16"><FaqSearch faqs={faqs} /></section>
     </>
   );

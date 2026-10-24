@@ -20,20 +20,20 @@ export const NAV: NavItem[] = [
       {
         title: 'Who we are',
         links: [
-          { label: 'History', href: '/about/history', description: 'From 1863 to a modern force' },
-          { label: 'Vision, Mission & Values', href: '/about#mission', description: 'What guides every soldier' },
-          { label: 'Chief of Army Staff', href: '/about/leadership', description: 'Profile of the COAS' },
+          { label: 'History', href: '/about/history', description: 'Founded in Lagos in 1863' },
+          { label: 'Vision, Mission & Values', href: '/about#mission', description: 'What we do and what we stand for' },
+          { label: 'Chief of Army Staff', href: '/about/leadership', description: 'Head of the Nigerian Army' },
         ],
       },
       {
         title: 'Structure',
         links: [
-          { label: 'Organisation Chart', href: '/about/organisation', description: 'Interactive command structure' },
-          { label: 'Ranks & Insignia', href: '/about/ranks', description: 'Officers and soldiers' },
+          { label: 'Organisation Chart', href: '/about/organisation', description: 'How the Army and 81 Division are organised' },
+          { label: 'Ranks & Insignia', href: '/about/ranks', description: 'From Private to General' },
         ],
       },
     ],
-    feature: { title: 'Victory is from God alone', text: 'Discover the proud heritage of the Nigerian Army.', href: '/about/history', image: '/images/officers-walking.jpg', cta: 'Read our history' },
+    feature: { title: 'Where it all began', text: 'The Nigerian Army was born in Lagos in 1863. Read our story.', href: '/about/history', image: '/images/officers-walking.jpg', cta: 'Read our history' },
   },
   {
     label: 'Join the Army',
@@ -42,21 +42,21 @@ export const NAV: NavItem[] = [
       {
         title: 'Recruitment',
         links: [
-          { label: 'Eligibility Requirements', href: '/join/eligibility', description: 'Age, height, education' },
-          { label: 'How to Apply', href: '/join/how-to-apply', description: 'Step-by-step guide' },
-          { label: 'Apply Online', href: '/portal', description: 'Recruitment portal' },
+          { label: 'Eligibility Requirements', href: '/join/eligibility', description: 'Check you qualify' },
+          { label: 'How to Apply', href: '/join/how-to-apply', description: 'Seven simple steps' },
+          { label: 'Apply Online', href: '/portal', description: 'Start or continue your application' },
         ],
       },
       {
         title: 'Training & help',
         links: [
-          { label: 'Training Institutions', href: '/join/institutions', description: 'Depot, NDA and corps schools' },
-          { label: 'Frequently Asked Questions', href: '/join/faqs', description: 'Searchable answers' },
-          { label: 'Verify a Slip', href: '/verify', description: 'Check an acknowledgement slip' },
+          { label: 'Training Institutions', href: '/join/institutions', description: 'Where soldiers and officers train' },
+          { label: 'Frequently Asked Questions', href: '/join/faqs', description: 'Quick answers to common questions' },
+          { label: 'Verify a Slip', href: '/verify', description: 'Check a slip is genuine' },
         ],
       },
     ],
-    feature: { title: 'Recruitment is FREE', text: 'Never pay anyone for forms or slots. Apply only through this website.', href: '/join/how-to-apply', image: '/images/recruits-helmets.jpg', cta: 'Start your journey' },
+    feature: { title: 'Applying is FREE', text: 'Never pay anyone for forms or slots. Apply only on this website.', href: '/join/how-to-apply', image: '/images/recruits-helmets.jpg', cta: 'Start your journey' },
   },
   {
     label: 'Operations & News',
@@ -65,13 +65,13 @@ export const NAV: NavItem[] = [
       {
         title: 'Newsroom',
         links: [
-          { label: 'Press Releases', href: '/news', description: 'Search official statements' },
-          { label: 'Photo & Video Gallery', href: '/news/gallery', description: 'Images from the field' },
-          { label: 'Events Calendar', href: '/news/events', description: 'Ceremonies and exercises' },
+          { label: 'Press Releases', href: '/news', description: 'Official statements from Lagos' },
+          { label: 'Photo & Video Gallery', href: '/news/gallery', description: 'Our troops at work' },
+          { label: 'Events Calendar', href: '/news/events', description: 'What’s coming up in Lagos' },
         ],
       },
     ],
-    feature: { title: 'Army Day Celebration', text: 'Highlights from NADCEL parades and community projects.', href: '/news/gallery', image: '/images/armoured-vehicle.jpg', cta: 'View gallery' },
+    feature: { title: 'Army Day in Lagos', text: 'Parades, prayers, sports and community projects.', href: '/news/gallery', image: '/images/armoured-vehicle.jpg', cta: 'View gallery' },
   },
   {
     label: 'Welfare & Services',
@@ -80,9 +80,9 @@ export const NAV: NavItem[] = [
       {
         title: 'Support for',
         links: [
-          { label: 'Serving Personnel', href: '/welfare/serving-personnel', description: 'Healthcare, housing, insurance' },
-          { label: 'Veterans', href: '/welfare/veterans', description: 'Pensions and resettlement' },
-          { label: 'Families', href: '/welfare/families', description: 'Schools, healthcare, support' },
+          { label: 'Serving Personnel', href: '/welfare/serving-personnel', description: 'Healthcare, housing and insurance' },
+          { label: 'Veterans', href: '/welfare/veterans', description: 'Pensions, healthcare and resettlement' },
+          { label: 'Families', href: '/welfare/families', description: 'Schools, healthcare and support' },
         ],
       },
     ],
@@ -94,9 +94,9 @@ export const NAV: NavItem[] = [
       {
         title: 'Documents',
         links: [
-          { label: 'Downloads Library', href: '/resources', description: 'Forms and publications' },
-          { label: 'Tenders & Procurement', href: '/resources/tenders', description: 'Open invitations and status' },
-          { label: 'Policies', href: '/resources/policies', description: 'Privacy, FOI, human rights' },
+          { label: 'Downloads Library', href: '/resources', description: 'Forms, reports and publications' },
+          { label: 'Tenders & Procurement', href: '/resources/tenders', description: 'Open bids and results' },
+          { label: 'Policies', href: '/resources/policies', description: 'Privacy, FOI and human rights' },
         ],
       },
     ],

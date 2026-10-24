@@ -10,7 +10,7 @@ export default async function ContactPage() {
   const { settings } = await getContent();
   return (
     <>
-      <PageHero title="Contact us" intro="Reach 81 Division Headquarters in Lagos, report an emergency or send us an enquiry." eyebrow="Contact" crumbs={[{ label: 'Contact Us' }]} image="/images/officers-walking.jpg" />
+      <PageHero title="Contact us" intro="Call us in an emergency, find 81 Division Headquarters in Lagos, or send us a message." eyebrow="Contact" crumbs={[{ label: 'Contact Us' }]} image="/images/officers-walking.jpg" />
       <section className="container-x grid gap-10 py-16 lg:grid-cols-12">
         <div className="space-y-6 lg:col-span-5">
           <div className="rounded-xl bg-danger p-6 text-white">
@@ -33,7 +33,7 @@ export default async function ContactPage() {
         </div>
         <div className="card p-6 sm:p-8 lg:col-span-7">
           <h2 className="text-2xl font-bold">Send us a message</h2>
-          <p className="mt-1 mb-6 text-sm text-muted">We aim to respond within 5 working days. Messages are handled under our privacy notice.</p>
+          <p className="mt-1 mb-6 text-sm text-muted">We reply within 5 working days. We handle your message in line with our privacy notice.</p>
           <ContactForm />
         </div>
       </section>

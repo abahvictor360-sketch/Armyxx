@@ -39,7 +39,7 @@ export default async function WelfareSectionPage({ params }: { params: Promise<{
             );
           })}
         </ul>
-        <aside className="lg:col-span-4">
+        <div className="lg:col-span-4">
           <nav aria-label="Welfare sections" className="card p-5">
             <p className="font-semibold">Other sections</p>
             <ul className="mt-3 space-y-2">
@@ -47,7 +47,7 @@ export default async function WelfareSectionPage({ params }: { params: Promise<{
             </ul>
             <Link href="/contact" className="btn-primary mt-5 w-full">Contact the welfare desk</Link>
           </nav>
-        </aside>
+        </div>
       </section>
     </>
   );

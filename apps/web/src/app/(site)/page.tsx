@@ -8,10 +8,17 @@ import { SectionHeading } from '@/components/site/PageHero';
 export const dynamic = 'force-static';
 
 const QUICK = [
-  { title: 'Join the Army', text: 'Eligibility, how to apply and the online portal.', href: '/join', Icon: UserPlus },
-  { title: 'News & Operations', text: 'Press releases, galleries and events.', href: '/news', Icon: Newspaper },
-  { title: 'Welfare & Services', text: 'Support for personnel, veterans and families.', href: '/welfare', Icon: HeartHandshake },
-  { title: 'Contact Us', text: 'Headquarters, emergency lines and enquiries.', href: '/contact', Icon: PhoneCall },
+  { title: 'Join the Army', text: 'Check you qualify and apply online. It’s free.', href: '/join', Icon: UserPlus },
+  { title: 'News & Operations', text: 'The latest from our troops in Lagos.', href: '/news', Icon: Newspaper },
+  { title: 'Welfare & Services', text: 'Support for soldiers, veterans and families.', href: '/welfare', Icon: HeartHandshake },
+  { title: 'Contact Us', text: 'Emergency lines, our address and enquiries.', href: '/contact', Icon: PhoneCall },
+];
+
+const FOOTPRINT = [
+  { name: 'Division Headquarters', text: 'Eti-Osa, Lagos. Commands the Army’s units in Lagos and Ogun States.' },
+  { name: 'Bonny Cantonment', text: 'Victoria Island, Lagos.' },
+  { name: '9 Brigade', text: 'Ikeja Cantonment, Lagos. Mechanised and infantry battalions.' },
+  { name: '35 Brigade', text: 'Abeokuta, Ogun State.' },
 ];
 
 export default async function HomePage() {
@@ -21,10 +28,10 @@ export default async function HomePage() {
   const today = new Date().toISOString().slice(0, 10);
   const coas = c.leadership[0];
   const facts = [
-    { value: '1863', label: 'Year established' },
-    { value: '₦0', label: 'Cost to apply — recruitment is free' },
-    { value: '193', label: 'Toll-free emergency line' },
-    { value: String(c.institutions.length), label: 'Training institutions' },
+    { value: '1863', label: 'The Nigerian Army was founded in Lagos' },
+    { value: '₦0', label: 'The cost of applying to join' },
+    { value: '193', label: 'Free Army emergency line, 24 hours' },
+    { value: '2', label: 'States we protect: Lagos and Ogun' },
   ];
   const events = c.events.filter((e) => (e.endDate ?? e.date) >= today).sort((a, b) => a.date.localeCompare(b.date)).slice(0, 4);
 
@@ -37,7 +44,7 @@ export default async function HomePage() {
         <div className="container-x grid gap-8 pt-12 pb-32 sm:gap-10 sm:pt-24 sm:pb-36 lg:grid-cols-12 lg:pb-44">
           <div className="lg:col-span-7">
             <p className="inline-flex items-center gap-2 rounded-full border border-gold-500/60 bg-olive-950/60 px-3 py-1 text-xs font-semibold tracking-[0.18em] text-gold-300 uppercase">
-              Nigerian Army · Est. 1863
+              81 Division (Amphibious) · Lagos
             </p>
             <h1 className="mt-5 font-serif text-[2.1rem] leading-[1.1] font-bold text-balance text-white sm:mt-6 sm:text-6xl">{c.settings.heroTitle}</h1>
             <p className="mt-4 max-w-xl text-base text-khaki-100 sm:mt-5 sm:text-lg">{c.settings.heroSubtitle}</p>
@@ -49,7 +56,7 @@ export default async function HomePage() {
           </div>
           <div className="self-end lg:col-span-5">
             <figure className="rounded-xl border border-white/15 bg-olive-950/70 p-5 backdrop-blur sm:p-6">
-              <p className="text-xs font-semibold tracking-[0.2em] text-gold-300 uppercase">Our mission</p>
+              <p className="text-xs font-semibold tracking-[0.2em] text-gold-300 uppercase">What we do</p>
               <blockquote className="mt-3 font-serif text-base leading-relaxed text-white sm:text-lg">“{c.settings.mission}”</blockquote>
               <figcaption className="mt-4 border-t border-white/10 pt-3"><RecruitmentStatus variant="inline" /></figcaption>
             </figure>
@@ -100,7 +107,7 @@ export default async function HomePage() {
       {/* ------------------------------------------------ announcements + recruitment */}
       <section className="container-x grid gap-10 py-12 sm:py-16 lg:grid-cols-12">
         <div className="lg:col-span-8">
-          <SectionHeading eyebrow="Notices" title="Latest announcements" />
+          <SectionHeading eyebrow="Notices" title="Important notices" />
           <ul className="mt-8 space-y-4">
             {c.announcements.map((a) => (
               <li key={a.id} className={`card flex gap-4 p-5 ${a.urgent ? 'border-l-4 border-l-gold-500' : ''}`}>
@@ -114,25 +121,25 @@ export default async function HomePage() {
             ))}
           </ul>
         </div>
-        <aside className="space-y-6 lg:col-span-4">
+        <div className="space-y-6 lg:col-span-4">
           <RecruitmentStatus />
           <div className="card p-5">
-            <p className="font-semibold text-olive-900">Emergency lines</p>
+            <p className="font-semibold text-olive-900">In an emergency, call</p>
             <ul className="mt-3 space-y-2 text-sm">
               {c.settings.emergencyLines.map((l) => (
                 <li key={l.label} className="flex justify-between gap-3"><span className="text-muted">{l.label}</span><a className="font-semibold whitespace-nowrap text-olive-800 hover:underline" href={`tel:${l.number.replace(/[^\d+]/g, '')}`}>{l.number}</a></li>
               ))}
             </ul>
           </div>
-        </aside>
+        </div>
       </section>
 
       {/* ------------------------------------------------ news */}
       <section className="bg-olive-50/60 py-12 sm:py-16">
         <div className="container-x">
           <div className="flex flex-wrap items-end justify-between gap-4">
-            <SectionHeading eyebrow="Operations & News" title="From the newsroom" />
-            <Link href="/news" className="btn-outline">All press releases <ArrowRight aria-hidden className="h-4 w-4" /></Link>
+            <SectionHeading eyebrow="Operations & News" title="Latest from Lagos" />
+            <Link href="/news" className="btn-outline">All news <ArrowRight aria-hidden className="h-4 w-4" /></Link>
           </div>
           {lead && (
             <div className="mt-8 grid gap-6 sm:mt-10 lg:grid-cols-12">
@@ -166,6 +173,20 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* ------------------------------------------------ where we serve */}
+      <section aria-labelledby="footprint-heading" className="container-x pt-12 sm:pt-16">
+        <SectionHeading eyebrow="Where we serve" title="Protecting Lagos and Ogun States" intro="From the waterways of Lagos to the communities of Ogun, our troops work alongside the Police and other agencies to keep people safe." />
+        <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {FOOTPRINT.map((f) => (
+            <li key={f.name} className="card p-5">
+              <MapPin aria-hidden className="h-5 w-5 text-olive-600" />
+              <p className="mt-3 font-semibold text-olive-900">{f.name}</p>
+              <p className="mt-1 text-sm text-muted">{f.text}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       {/* ------------------------------------------------ leadership */}
       {coas && (
         <section aria-labelledby="leadership-heading" className="container-x pt-12 sm:pt-16">
@@ -174,12 +195,12 @@ export default async function HomePage() {
               <Image src={coas.photo} alt={`${coas.rank} ${coas.name}, ${coas.appointment}`} fill sizes="(min-width:768px) 40vw, 100vw" className="object-cover object-top" />
             </div>
             <div className="flex flex-col justify-center p-6 sm:p-10 md:col-span-7">
-              <p className="text-xs font-semibold tracking-[0.2em] text-gold-300 uppercase">Leadership</p>
+              <p className="text-xs font-semibold tracking-[0.2em] text-gold-300 uppercase">Our leadership</p>
               <h2 id="leadership-heading" className="mt-2 text-2xl font-bold text-white sm:text-3xl">{coas.rank} {coas.name}</h2>
               <p className="mt-1 text-sm text-khaki-100">{coas.appointment}</p>
               <Quote aria-hidden className="mt-6 h-7 w-7 text-gold-500" />
               <p className="mt-2 leading-relaxed text-khaki-100">{coas.bio[0]}</p>
-              <Link href="/about/leadership" className="btn-ghost-light mt-6 self-start">Read profile <ArrowRight aria-hidden className="h-4 w-4" /></Link>
+              <Link href="/about/leadership" className="btn-ghost-light mt-6 self-start">Read full profile <ArrowRight aria-hidden className="h-4 w-4" /></Link>
             </div>
           </div>
         </section>
@@ -188,8 +209,8 @@ export default async function HomePage() {
       {/* ------------------------------------------------ values + events */}
       <section className="container-x grid gap-12 py-12 sm:py-16 lg:grid-cols-2">
         <div className="min-w-0">
-          <SectionHeading eyebrow="Who we are" title="Core values" intro={c.settings.vision} />
-          <ul className="-mx-4 mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 [scrollbar-width:none] sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:px-0 sm:pb-0">
+          <SectionHeading eyebrow="Who we are" title="Our values" intro={c.settings.vision} />
+          <ul tabIndex={0} aria-label="Our values (scroll sideways for more)" className="-mx-4 mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 [scrollbar-width:none] sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:px-0 sm:pb-0">
             {c.settings.coreValues.map((v, i) => (
               <li key={v.title} className="w-[75%] shrink-0 snap-start rounded-lg border border-olive-100 bg-white p-4 sm:w-auto">
                 <p className="font-serif text-2xl font-bold text-gold-600" aria-hidden>{String(i + 1).padStart(2, '0')}</p>
@@ -201,8 +222,8 @@ export default async function HomePage() {
         </div>
         <div>
           <div className="flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
-            <SectionHeading eyebrow="Calendar" title="Upcoming events" />
-            <Link href="/news/events" className="text-sm font-semibold text-olive-700 hover:underline">Full calendar</Link>
+            <SectionHeading eyebrow="Calendar" title="Coming up" />
+            <Link href="/news/events" className="text-sm font-semibold text-olive-700 hover:underline">See all events</Link>
           </div>
           <ul className="mt-8 space-y-3">
             {events.map((e) => {
@@ -230,12 +251,12 @@ export default async function HomePage() {
         <Image src="/images/recruits-helmets.jpg" alt="" fill sizes="100vw" className="-z-10 object-cover opacity-25" />
         <div className="container-x flex flex-col items-stretch gap-6 py-12 text-white sm:items-start sm:py-16 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="text-xs font-semibold tracking-[0.2em] text-gold-300 uppercase">Serve your nation</p>
-            <h2 className="mt-2 max-w-xl text-3xl font-bold text-white sm:text-4xl">Ready to answer the call?</h2>
-            <p className="mt-2 max-w-xl text-khaki-100">Check the eligibility requirements, prepare your documents and apply online. It is free.</p>
+            <p className="text-xs font-semibold tracking-[0.2em] text-gold-300 uppercase">Serve Nigeria</p>
+            <h2 className="mt-2 max-w-xl text-3xl font-bold text-white sm:text-4xl">Ready to serve?</h2>
+            <p className="mt-2 max-w-xl text-khaki-100">Check you qualify, get your documents ready and apply online in about 20 minutes. It costs nothing.</p>
           </div>
           <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
-            <Link href="/join/eligibility" className="btn-ghost-light">Eligibility</Link>
+            <Link href="/join/eligibility" className="btn-ghost-light">Check eligibility</Link>
             <Link href="/portal/register" className="btn-gold">Apply online <ArrowRight aria-hidden className="h-4 w-4" /></Link>
           </div>
         </div>

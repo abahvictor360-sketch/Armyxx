@@ -2,13 +2,13 @@ import { getContent } from '@/lib/content';
 import { PageHero } from '@/components/site/PageHero';
 
 export const dynamic = 'force-static';
-export const metadata = { title: 'History', description: 'The history of the Nigerian Army from 1863 to the present day.' };
+export const metadata = { title: 'History', description: 'The Nigerian Army began in Lagos in 1863. Read how it grew into a modern national army and how 81 Division came to guard Lagos.' };
 
 export default async function HistoryPage() {
   const { settings } = await getContent();
   return (
     <>
-      <PageHero title="Our history" intro="More than 160 years of service, from a small colonial constabulary to a modern national army." eyebrow="About us" crumbs={[{ label: 'About Us', href: '/about' }, { label: 'History' }]} />
+      <PageHero title="Our history" intro="The Nigerian Army was born in Lagos more than 160 years ago. This is how a small local force became a modern national army." eyebrow="About us" crumbs={[{ label: 'About Us', href: '/about' }, { label: 'History' }]} />
       <section className="container-x py-16">
         <ol className="relative mx-auto max-w-3xl border-l-2 border-olive-100 pl-8">
           {settings.history.map((h) => (

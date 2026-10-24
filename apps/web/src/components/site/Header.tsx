@@ -59,11 +59,11 @@ export function Header() {
   return (
     <>
       {/* Utility bar */}
-      <div className="bg-olive-950 text-xs text-khaki-100">
+      <div role="region" aria-label="Site information" className="bg-olive-950 text-xs text-khaki-100">
         <div className="container-x flex h-9 items-center justify-between gap-4">
           <p className="flex items-center gap-1.5 truncate">
             <ShieldCheck aria-hidden className="h-3.5 w-3.5 text-gold-500" />
-            <span className="truncate">{DEMO ? 'Design preview — not an official website' : 'Official website of the Nigerian Army'}</span>
+            <span className="truncate">{DEMO ? 'Design preview — not an official website' : 'Nigerian Army · 81 Division (Amphibious), Lagos'}</span>
           </p>
           <div className="flex shrink-0 items-center gap-4">
             <a href="tel:193" className="hidden items-center gap-1 hover:text-white sm:flex">
@@ -76,11 +76,11 @@ export function Header() {
 
       <header ref={headerRef} className={`sticky top-0 z-50 border-b border-olive-800 bg-olive-800 text-white transition-shadow ${scrolled ? 'shadow-lg' : ''}`}>
         <div className="container-x flex h-18 items-center justify-between gap-4 py-2">
-          <Link href="/" className="flex min-w-0 items-center gap-3" aria-label="Nigerian Army — home">
+          <Link href="/" className="flex min-w-0 items-center gap-3" aria-label="Nigerian Army, Lagos — home">
             <Image src="/images/crest.png" alt="" width={52} height={52} priority className="h-12 w-12 shrink-0 rounded-full ring-2 ring-gold-500/60" />
             <span className="min-w-0 leading-tight">
-              <span className="block font-serif text-lg font-bold tracking-wide sm:text-xl">NIGERIAN ARMY</span>
-              <span className="block truncate text-[11px] tracking-[0.2em] text-gold-300 uppercase">Victory is from God alone</span>
+              <span className="block font-serif text-base font-bold tracking-wide whitespace-nowrap min-[400px]:text-lg sm:text-xl">NIGERIAN ARMY</span>
+              <span className="block truncate text-[11px] tracking-[0.2em] text-gold-300 uppercase">81 Division · Lagos</span>
             </span>
           </Link>
 
